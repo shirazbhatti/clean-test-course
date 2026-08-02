@@ -55,34 +55,7 @@ describe('Test Home', () => {
     //Arrange: Setup the mock API
     //Listen for any GET requests using the axios module
     //Intercept the GET requests and provide a mocked response
-    mockGet.mockImplementation((url) => {
-      switch (url) {
-        case `${API_URL}/api/category/?format=json`:
-          return Promise.resolve({
-            data: {
-              status: 'success',
-              data: [
-                {
-                  id: 1,
-                  name: 'Handhelds',
-                  description: "So big, you don't need thumbs.",
-                },
-                {
-                  id: 2,
-                  name: 'Appeteasers',
-                  description: 'Tease the hangry hippo, he get hangrier',
-                },
-              ],
-            },
-          });
-        default:
-          return Promise.resolve({
-            data: {
-              status: 'fail',
-            },
-          });
-      }
-    });
+    
 
     //Act: Call the Home page
     render(<Home />);
