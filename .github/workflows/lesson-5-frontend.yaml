@@ -31,7 +31,7 @@ jobs:
   security_test:
     needs: [deploy]
     runs-on: ubuntu-latest
-    sets:
+    steps:
       - name: ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.15.0
         with:
